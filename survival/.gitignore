@@ -1,0 +1,14 @@
+# Minecraft dirs
+cache/
+libraries/
+logs/
+versions/
+world/
+world_nether/
+world_the_end/
+
+# Minecraft files
+.console_history
+usercache.json
+version_history.json
+eula.txt
