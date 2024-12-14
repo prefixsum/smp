@@ -1,12 +1,13 @@
 [Unit]
 Description=Minecraft Service
-After=default.target
+After=network.target
 
 [Service]
 Type=simple
 User=root
 WorkingDirectory=/minecraft/smp/survival
 ExecStart=/bin/bash /minecraft/smp/survival/start.sh
+Restart=on-failure
 
 [Install]
-WantedBy=default.target
+WantedBy=multi-user.target
