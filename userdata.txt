@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # Java
 sudo yum update -y
@@ -10,6 +10,7 @@ sudo yum -y install git
 
 # Get server files
 sudo git clone https://github.com/prefixsum/smp.git /minecraft/smp
+chmod -R 777 /minecraft/smp
 
 # Set up Minecraft server service
 sudo cp /minecraft/smp/survival/minecraft.service /etc/systemd/system/minecraft.service
