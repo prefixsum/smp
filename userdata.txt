@@ -14,8 +14,10 @@ chmod -R 777 /minecraft/smp
 
 # Set up Minecraft server service
 sudo cp /minecraft/smp/survival/minecraft.service /etc/systemd/system/minecraft.service
-sudo systemctl daemon-reload
-sudo systemctl enable minecraft
 
-# Start Minecraft server via service
+sudo chown root:root /etc/systemd/system/minecraft.service
+sudo chmod 644 /etc/systemd/system/minecraft.service
+
+sudo systemctl daemon-reload
 sudo systemctl start minecraft
+sudo systemctl enable minecraft
