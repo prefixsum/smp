@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+# Java
+sudo yum update -y
+sudo yum install -y java-21-amazon-corretto-headless
+java -version
+
+# Git
+sudo yum -y install git
+
+# Get server files
+sudo git clone https://github.com/prefixsum/smp.git /minecraft/smp
+
+# Set up Minecraft server service
+sudo cp /minecraft/smp/survival/minecraft.service /etc/systemd/system/minecraft.service
+sudo systemctl daemon-reload
+sudo systemctl enable minecraft
+
+# Start Minecraft server via service
+sudo systemctl start minecraft
